@@ -1,11 +1,11 @@
 {
-  "name": "starter",
+  "name": "forkify",
   "version": "1.0.0",
   "description": "Recipe application",
   "default": "index.html",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html --no-scope-hoist"
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "author": "Milton Sanchez",
   "license": "ISC",
@@ -16,6 +16,7 @@
   "dependencies": {
     "core-js": "^3.34.0",
     "fractional": "^1.0.0",
+    "fracty": "^1.0.11",
     "regenerator-runtime": "^0.14.0"
   }
 }
