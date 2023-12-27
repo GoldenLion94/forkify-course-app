@@ -15,14 +15,17 @@ const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
 
+    // Guard Clause
     if (!id) return;
+
     recipeView.renderSpinner();
 
     // 0) Update results view to mark selected search result
-    resultsView.update(model.getSearchResultsPage());
 
     // 1) Updating bookmarks view
+
     bookmarksView.update(model.state.bookmarks);
+    resultsView.update(model.getSearchResultsPage());
 
     // 2) Loading recipe
     await model.loadRecipe(id);
@@ -41,6 +44,8 @@ const controlSearchResults = async function () {
 
     // 1) Get search query
     const query = searchView.getQuery();
+
+    // Guard Clause
     if (!query) return;
 
     // 2) Load search results
